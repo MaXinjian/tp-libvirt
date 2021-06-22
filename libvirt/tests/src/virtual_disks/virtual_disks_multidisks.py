@@ -969,6 +969,8 @@ def run(test, params, env):
     vg_name = params.get("virt_disk_vg_name", "vg_test_0")
     lv_name = params.get("virt_disk_lv_name", "lv_test_0")
     disk_transient = "yes" == params.get("disk_transient", "no")
+    if disk_transient:
+        sharebacking = "yes" == params.get("sharebacking", "no")
     virt_xml_validate_test = "yes" == params.get("virt_xml_validate_test", "no")
     test_attach_device_iteration = "yes" == params.get("test_attach_device_iteration", "no")
     attach_device_as_scsi_lun = "yes" == params.get("attach_device_as_scsi_lun", "no")
